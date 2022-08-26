@@ -1,0 +1,24 @@
+{
+    "name": "unofficial-valorant-api",
+    "version": "2.3.0-stable.0",
+    "description": "Library for the Unofficial VALORANT API by api.henrikdev.xyz",
+    "main": "./src/index.js",
+    "dependencies": {
+        "axios": "^0.27.2"
+    },
+    "keywords": [
+        "Valorant",
+        "Riot",
+        "Wrapper",
+        "API",
+        "MMR",
+        "Riot Games"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Henrik-3/unofficial-valorant-api.git"
+    },
+    "homepage": "https://github.com/Henrik-3/unofficial-valorant-api",
+    "author": "HenrikDev",
+    "license": "ISC"
+}
