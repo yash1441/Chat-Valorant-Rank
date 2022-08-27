@@ -5,6 +5,9 @@ const port = 3000;
 const HenrikDevValorantAPI = require('unofficial-valorant-api');
 const vapi = new HenrikDevValorantAPI();
 
+const fs = require('fs');
+const myConsole = new console.Console(fs.createWriteStream('./output.txt'));
+
 app.get('/', (req, res) => {
 	res.send('Stop snooping around >.>');
 });
@@ -20,14 +23,16 @@ app.get('/valorant/:name/:tag', async (req, res, next) => {
 		tag: tag,
 	});
 	if (mmr_data.error)	{
-		return res.send(`Error ${mmr_data.status}`);
+		res.send(`Error ${mmr_data.status}`);
+		return myConsole.log(`Username: ${name}#${tag} Error: ${mmr_data.status}`);
 	}
 
 	// console.log(`[${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
 	// console.log(`${name}#${tag}`);
 	res.send(`${name}#${tag} [${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
+	myConsole.log(`${name}#${tag} [${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
 });
 
 app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`)
+	myConsole.log(`Example app listening at http://localhost:${port}`)
 });
