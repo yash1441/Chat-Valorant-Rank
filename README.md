@@ -1,6 +1,8 @@
 # Chat-Valorant-Rank
 This API lets you fetch your rank dynamically, typically for making !rank command in your Twitch/YouTube stream.
 
+### ONLY FOR APAC PLAYERS
+
 # StreamElements/NightBot Usage
 Copy the following code and paste it in the output of whatever custom command you want to create, after replacing "name" and "tag".
 
