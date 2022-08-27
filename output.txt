@@ -1,2 +1,0 @@
-Example app listening at http://localhost:3000
-Tan#smh [Diamond 3] - 65 RR
