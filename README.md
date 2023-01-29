@@ -1,14 +1,15 @@
 # Chat-Valorant-Rank
-This API lets you fetch your rank dynamically, typically for making !rank command in your Twitch/YouTube stream.
+This API lets you fetch your rank dynamically, typically for making **!rank** command in your Twitch/YouTube stream.
 
 ### ~~ONLY FOR APAC PLAYERS~~ NOW AVAILABLE FOR ALL REGIONS
 
 # StreamElements/NightBot Usage
-Copy the following code and paste it in the output of whatever custom command you want to create, after replacing "name" and "tag".
-
+1. Copy the following code and paste it in the output of whatever custom command you want to create.<br>
 `$(urlfetch https://api.yash1441.repl.co/valorant/region/name/tag)`
 
-Replace "region" with your account's region code, "name" with your Valorant username and "tag" with your hashtag.
+2. Replace `region` with your account's region code, `name` with your Valorant username and `tag` with your hashtag.
+
+## Region Codes
 
 | Region Code | Corresponding Region |
 | ----------- | -------------------- |
