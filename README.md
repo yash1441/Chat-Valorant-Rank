@@ -11,6 +11,7 @@ This API lets you fetch your rank dynamically, typically for making **!rank** co
 
 <details>
  <summary><i>If you don't want your name and tag in the response then open this</i></summary>
+ 
   3. If you don't want your name and tag to be shown then add `?onlyRank=true` at the end of the URL. So the updated URL would look something like this: `$(urlfetch  https://api.yash1441.repl.co/valorant/region/name/tag?onlyRank=true)`
 </details>
 
