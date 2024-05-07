@@ -46,3 +46,9 @@ Here is an example for my account but without my name and tag in the command res
   * Username: `Simon#Tan`
   * Account Region: `Asia/Pacific`
   * URL: `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/ap/Simon/Tan?onlyRank=true)`
+
+
+## Troubleshooting
+
+### Why is it not working?
+Please double check the URL you are using. If everything works fine on your end then check if the status of the backend API [here](https://status.henrikdev.xyz/). If that is also up then create an issue with details about the URL you used and what exactly you are facing.
