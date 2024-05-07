@@ -1,9 +1,9 @@
 # Chat-Valorant-Rank
 This API lets you fetch your rank dynamically, typically for making **!rank** command in your Twitch/YouTube stream.
 
-### URL HAS CHANGED, PLEASE UPDATE WITH THE NEW URL BELOW
+#### URL HAS CHANGED, PLEASE UPDATE WITH THE NEW URL BELOW
 
-# StreamElements/NightBot Usage
+## StreamElements/NightBot Usage
 1. Copy the following code and paste it in the output of whatever custom command you want to create.<br>
 `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)`
 
@@ -15,7 +15,7 @@ This API lets you fetch your rank dynamically, typically for making **!rank** co
   3. If you don't want your name and tag to be shown then add `?onlyRank=true` at the end of the URL. So the updated URL would look something like this: `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag?onlyRank=true)`
 </details>
 
-## Region Codes
+### Region Codes
 
 | Region Code | Corresponding Region |
 | ----------- | -------------------- |
@@ -27,7 +27,7 @@ This API lets you fetch your rank dynamically, typically for making **!rank** co
 | na          | North America        |
 
 
-# Examples
+## Examples
 
 Here is an example for my account. This would work for most accounts.
 + Example #1
