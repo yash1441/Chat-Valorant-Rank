@@ -52,3 +52,7 @@ Here is an example for my account but without my name and tag in the command res
 
 ### Why is it not working?
 Please double check the URL you are using. If everything works fine on your end then check if the status of the backend API [here](https://status.henrikdev.xyz/). If that is also up then create an issue with details about the URL you used and what exactly you are facing.
+
+
+## Credits
+[@Henrik-3](https://github.com/Henrik-3) for creating [unofficial-valorant-api](https://github.com/Henrik-3/unofficial-valorant-api)
