@@ -1,11 +1,14 @@
 # Chat-Valorant-Rank
 This API lets you fetch your rank dynamically, typically for making **!rank** command in your Twitch/YouTube stream.
 
-#### URL HAS CHANGED, PLEASE UPDATE WITH THE NEW URL BELOW
+## Usage
+1. Copy the code for your respective bot from the following table and paste it in the output of whatever custom command you want to create.<br>
 
-## StreamElements/NightBot Usage
-1. Copy the following code and paste it in the output of whatever custom command you want to create.<br>
-`$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)`
+|       Bot      |                                         Code                                       |
+| ---------------| ---------------------------------------------------------------------------------- |
+| StreamElements | `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)` |
+| NightBot       | `$(customapi https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)` |
+| Fossabot       | `$(customapi https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)` |
 
 2. Replace `region` with your account's region code, `name` with your Valorant username and `tag` with your hashtag.
 
