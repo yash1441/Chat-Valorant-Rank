@@ -3,72 +3,9 @@ This API lets you fetch your rank dynamically, typically for making **!rank** co
 
 
 ## Usage
-1. Copy the code for your respective bot from the following table and paste it in the output of whatever custom command you want to create.<br>
+Visit [Chat-Valorant-Rank Generator](https://y-gaming.in/chat-valorant-rank/) and select the options as per your requirements and press **Generate**. This will create a link for you to copy and use in whichever bot's custom command you want to.
+![image](https://github.com/yash1441/Chat-Valorant-Rank/assets/14055917/bcf8e3ad-698b-460a-9181-266d1824bf2a)
 
-|       Bot      |                                         Code                                       |
-| ---------------| ---------------------------------------------------------------------------------- |
-| StreamElements | `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)` |
-| NightBot       | `$(customapi https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)` |
-| Fossabot       | `$(customapi https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag)` |
-
-2. Replace `region` with your account's region code, `name` with your Valorant username and `tag` with your hashtag.
-
-
-<details>
- <summary><i>If you don't want your name and tag in the response then open this</i></summary>
-
- 
-  3. If you don't want your name and tag to be shown then add `?onlyRank=true` at the end of the URL. So the updated URL would look something like this: `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/region/name/tag?onlyRank=true)`
-</details>
-
-
-## Region Codes
-
-| Region Code | Corresponding Region |
-| ----------- | -------------------- |
-| ap          | Asia/Pacific         |
-| br          | Brazil               |
-| eu          | Europe               |
-| kr          | Korea                |
-| latam       | Latin America        |
-| na          | North America        |
-
-
-## Parameters
-The API has a few parameters that users can use to customize the response as per their needs. By default, if you don't write a parameter then it is set to `false`.
-
-+ ### onlyRank
-  * Setting `onlyRank=true` hides the name and tag from the response.
-
-+ ### mmrChange
-  * Setting `mmrChange=true` shows the RR change from the last game.
-
-
-## Examples
-
-Here is an example for my account. This would work for most accounts.
-+ Example #1
-  * Username: `Simon#Tan`
-  * Account Region: `Asia/Pacific`
-  * URL: `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/ap/Simon/Tan)`
-
-Here is an example for an account with space(s) in middle. You don't need to put space in the URL so you can ignore spaces in your name.
-+ Example #2
-  * Username: `SEN TenZ#0505`
-  * Account Region: `North America`
-  * URL: `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/na/SENTenZ/0505)`
-  
-Here is an example for my account but without my name and tag in the command response.
-+ Example #3
-  * Username: `Simon#Tan`
-  * Account Region: `Asia/Pacific`
-  * URL: `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/ap/Simon/Tan?onlyRank=true)`
-
-Here is an example for my account but without my name and tag in the command response and also showing the RR change.
-+ Example #4
-  * Username: `Simon#Tan`
-  * Account Region: `Asia/Pacific`
-  * URL: `$(customapi.https://splendid-groovy-feverfew.glitch.me/valorant/ap/Simon/Tan?onlyRank=true&mmrChange=true)`
 
 
 ## Troubleshooting
