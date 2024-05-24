@@ -35,11 +35,23 @@ app.get('/valorant/:region?/:name/:tag', async (req, res, next) => {
 		return myConsole.log(`${region} ${name}#${tag} Error: ${mmr_data.status}`);
 	}
 
-	if (req.query.onlyRank === "true") {
-		res.send(`${mmr_data.data.currenttierpatched} - ${mmr_data.data.ranking_in_tier} RR`);
-	} else res.send(`${name}#${tag} [${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
+	const rankData = {
+		rank: mmr_data.data.currenttierpatched,
+	    	rr: mmr_data.data.ranking_in_tier,
+	    	change: mmr_data.data.mmr_change_to_last_game,
+	};
 
-	myConsole.log(`${region} ${name}#${tag} [${mmr_data.data.currenttierpatched}] - ${mmr_data.data.ranking_in_tier} RR`);
+	if (req.query.onlyRank === 'true' && req.query.mmrChange === 'true') {
+		res.send(`${rankData.rank} : ${rankData.rr} RR [${rankData.change}]`);
+	} else if (req.query.onlyRank === 'true' && req.query.mmrChange != 'true') {
+    		res.send(`${rankData.rank} : ${rankData.rr} RR`);
+  	} else if (req.query.onlyRank  != 'true' && req.query.mmrChange === 'true') {
+    		res.send(`${name}#${tag} [${rankData.rank}] : ${rankData.rr} RR [${rankData.change}]`);
+  	} else {
+    		res.send(`${name}#${tag} [${rankData.rank}] : ${rankData.rr} RR`);
+  	}
+
+	myConsole.log(`${region} ${name}#${tag} [${rankData.rank}] : ${rankData.rr} RR`);
 });
 
 app.listen(port, () => {
