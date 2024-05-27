@@ -4,8 +4,7 @@ This API lets you fetch your rank dynamically, typically for making **!rank** co
 
 ## Usage
 Visit [Chat-Valorant-Rank Generator](https://y-gaming.in/chat-valorant-rank/) and select the options as per your requirements and press **Generate**. This will create a link for you to copy and use in whichever bot's custom command you want to.
-![image](https://github.com/yash1441/Chat-Valorant-Rank/assets/14055917/bcf8e3ad-698b-460a-9181-266d1824bf2a)
-
+![CVR](https://github.com/yash1441/Chat-Valorant-Rank/assets/14055917/afb49c90-ebd8-4d02-a491-e96ebad45f88)
 
 
 ## Troubleshooting
