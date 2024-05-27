@@ -10,7 +10,7 @@ Visit [Chat-Valorant-Rank Generator](https://y-gaming.in/chat-valorant-rank/) an
 ## Troubleshooting
 
 ### Why is it not working?
-Please double check the URL you are using. If everything works fine on your end then check if the status of the backend API [here](https://status.henrikdev.xyz/). If that is also up then create an issue with details about the URL you used and what exactly you are facing.
+Please double check the URL you are using. If everything works fine on your end then check the status of the backend API [here](https://status.henrikdev.xyz/). If that is also up then create an issue with details about the URL you used and what exactly you are facing.
 
 
 ## Credits
