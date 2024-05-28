@@ -12,6 +12,9 @@ Visit [Chat-Valorant-Rank Generator](https://y-gaming.in/chat-valorant-rank/) an
 ### Why is it not working?
 Please double check the URL you are using. If everything works fine on your end then check the status of the backend API [here](https://status.henrikdev.xyz/). If that is also up then create an issue with details about the URL you used and what exactly you are facing.
 
+### How can I contact you?
+[![Server Invite](https://discordapp.com/api/guilds/352556187193049088/widget.png?style=banner2)](https://discord.gg/AJBfjfr)
+
 
 ## Credits
 [@Henrik-3](https://github.com/Henrik-3) for creating [unofficial-valorant-api](https://github.com/Henrik-3/unofficial-valorant-api)
