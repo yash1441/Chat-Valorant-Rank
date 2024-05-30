@@ -1,5 +1,5 @@
 # Chat-Valorant-Rank
-This API lets you fetch your rank dynamically, typically for making **!rank** command in your Twitch/YouTube stream.
+This API lets you fetch your rank dynamically, typically for making **!rank** command in your Twitch/YouTube stream. Supports StreamElements, Nightbot, Fossabot and more!
 
 
 ## Usage
