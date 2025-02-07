@@ -24,51 +24,71 @@ app.get("/valorant/:region?/:name/:tag", async (req, res, next) => {
 	}
 
 	const cacheKey = `${region}-${name}-${tag}`;
-	const rankData = await getRankData(cacheKey, () =>
-		vapi.getMMR({
-			version: "v2",
-			region,
-			name,
-			tag,
-		})
-	);
-
-	if (!rankData.rank && !rankData.rr) {
-		return res.send(
-			`Either you haven't played any game recently or there could to be some error with the backend. You can track the status on bit.ly/henrikapistatus`
+	try {
+		const rankData = await getRankData(cacheKey, () =>
+			vapi.getMMR({
+				version: "v2",
+				region,
+				name,
+				tag,
+			})
 		);
-	}
 
-	res.send(formatRankData(req.query, name, tag, rankData));
-	await sendMessage(
-		`${region} ${name}#${tag} [${rankData.rank}] : ${rankData.rr} RR`
-	);
-	cache[cacheKey] = { data: rankData, timestamp: Date.now() };
+		if (!rankData.rank && !rankData.rr) {
+			return res.send(
+				`Either you haven't played any game recently or there could to be some error with the backend. You can track the status on bit.ly/henrikapistatus`
+			);
+		}
+
+		res.send(formatRankData(req.query, name, tag, rankData));
+		await sendMessage(
+			`${region} ${name}#${tag} [${rankData.rank}] : ${rankData.rr} RR`
+		);
+		cache[cacheKey] = { data: rankData, timestamp: Date.now() };
+	} catch (error) {
+		if (error.message.includes("429")) {
+			return res
+				.status(429)
+				.send("Rate limit exceeded. Please try again later.");
+		}
+		next(error);
+	}
 });
 
 app.get("/valorant-puuid/:region?/:puuid", async (req, res, next) => {
 	const { region = "ap", puuid } = req.params;
 
 	const cacheKey = `puuid-${puuid}`;
-	const rankData = await getRankData(cacheKey, () =>
-		vapi.getMMRByPUUID({
-			version: "v2",
-			region,
-			puuid,
-		})
-	);
-
-	if (!rankData.rank && !rankData.rr) {
-		return res.send(
-			`Either you haven't played any game recently or there could to be some error with the backend. You can track the status on bit.ly/henrikapistatus`
+	try {
+		const rankData = await getRankData(cacheKey, () =>
+			vapi.getMMRByPUUID({
+				version: "v2",
+				region,
+				puuid,
+			})
 		);
-	}
 
-	res.send(formatRankData(req.query, rankData.name, rankData.tag, rankData));
-	await sendMessage(
-		`${region} ${rankData.name}#${rankData.tag}  [${rankData.rank}] : ${rankData.rr} RR *(PUUID)*`
-	);
-	cache[cacheKey] = { data: rankData, timestamp: Date.now() };
+		if (!rankData.rank && !rankData.rr) {
+			return res.send(
+				`Either you haven't played any game recently or there could to be some error with the backend. You can track the status on bit.ly/henrikapistatus`
+			);
+		}
+
+		res.send(
+			formatRankData(req.query, rankData.name, rankData.tag, rankData)
+		);
+		await sendMessage(
+			`${region} ${rankData.name}#${rankData.tag}  [${rankData.rank}] : ${rankData.rr} RR *(PUUID)*`
+		);
+		cache[cacheKey] = { data: rankData, timestamp: Date.now() };
+	} catch (error) {
+		if (error.message.includes("429")) {
+			return res
+				.status(429)
+				.send("Rate limit exceeded. Please try again later.");
+		}
+		next(error);
+	}
 });
 
 app.listen(port, () => {
@@ -108,7 +128,7 @@ function formatRankData(query, name, tag, rankData) {
 	}
 }
 
-async function sendMessage(message) {
+async function sendMessage(message, retries = 3, delay = 1000) {
 	try {
 		const response = await fetch(process.env.WEBHOOK, {
 			method: "POST",
@@ -121,6 +141,15 @@ async function sendMessage(message) {
 		});
 
 		if (!response.ok) {
+			if (response.status === 429 && retries > 0) {
+				const retryAfter = response.headers.get("Retry-After");
+				const retryDelay = retryAfter
+					? parseInt(retryAfter) * 1000
+					: delay;
+				console.log(`Rate limited. Retrying after ${retryDelay}ms...`);
+				await new Promise((resolve) => setTimeout(resolve, retryDelay));
+				return sendMessage(message, retries - 1, delay * 2);
+			}
 			throw new Error(
 				`Failed to send message, status code: ${response.status}`
 			);
