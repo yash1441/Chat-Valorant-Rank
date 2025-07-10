@@ -1,20 +1,16 @@
 {
-  "name": "nodejs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1",
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
-    "node-fetch": "^3.2.6",
-    "path": "^0.12.7",
-    "unofficial-valorant-api": "^2.3.0-stable.0"
-  }
+	"name": "valorant-api",
+	"version": "1.0.0",
+	"description": "Valorant Rank API using Node.js HTTP module",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"dependencies": {
+		"node-fetch": "^2.6.12",
+		"unofficial-valorant-api": "^2.3.1-stable.0"
+	}
 }
