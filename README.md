@@ -3,7 +3,7 @@ This API lets you fetch your rank dynamically, typically for making **!rank** co
 
 
 ## Usage
-Visit [Chat-Valorant-Rank Generator](https://y-gaming.in/chat-valorant-rank/) and select the options as per your requirements and press **Generate**. This will create a link for you to copy and use in whichever bot's custom command you want to.
+Visit [ValorantRank.Chat](https://valorantrank.chat/ap/Simon/Vzn) and select the options as per your requirements and press **Generate**. This will create a link for you to copy and use in whichever bot's custom command you want to.
 ![CVR](https://github.com/user-attachments/assets/d90bea90-5755-4261-8e29-6600a56a6c3b)
 
 ## PUUID Mode
