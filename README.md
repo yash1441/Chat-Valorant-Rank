@@ -7,7 +7,7 @@ Visit [ValorantRank.Chat](https://valorantrank.chat/) and select the options as 
 ![CVR](https://github.com/user-attachments/assets/d90bea90-5755-4261-8e29-6600a56a6c3b)
 
 ## PUUID Mode
-This mode allows you to use your PUUID rather than your name and tag to fetch your rank. Using this method is better if you keep changing your name or tag and do not want to constantly update your command. This is also a more reliable way in general to fetch your rank. Currently, I don't have a direct method to tell you your PUUID but feel free to [add my discord bot](https://discord.com/oauth2/authorize?client_id=631824500228620289) or join my discord server from below, and use the `/valo account` command to get your PUUID.
+This mode allows you to use your PUUID rather than your name and tag to fetch your rank. Using this method is better if you keep changing your name or tag and do not want to constantly update your command. This is also a more reliable way in general to fetch your rank. Currently, I don't have a direct method to tell you your PUUID but feel free to [add my discord bot](https://discord.com/oauth2/authorize?client_id=631824500228620289&permissions=8&integration_type=0&scope=applications.commands+bot) or join my discord server from below, and use the `/valo account` command to get your PUUID.
 
 ## Troubleshooting
 
