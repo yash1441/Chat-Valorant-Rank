@@ -1,4 +1,4 @@
-# Chat-Valorant-Rank
+# ValoranktRank.Chat
 This API lets you fetch your rank dynamically, typically for making **!rank** command in your Twitch/YouTube stream. Supports StreamElements, Nightbot, Fossabot, Streamlabs, Wizebot and more!
 
 
